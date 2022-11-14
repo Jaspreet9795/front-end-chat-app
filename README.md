@@ -1,3 +1,24 @@
+
+Project-3 : 
+
+Title : Chat- App for  teachers and students. 
+
+functions & features - 
+1. New User will be able to register & existing users can login 
+2. Users will be able to  create their own chat groups with teachers / students 
+3. Users will be able to scroll through the existing chat rooms list 
+4. users will be able to delete the chat rooms if no longer required 
+5. This app will use web socket for rela time 
+
+
+
+Below is the basic outline of our project, 
+![pic](./wireframes/scr1.png)
+![pic](./wireframes/scr2.png))
+![pic](./wireframes/scr3.png)
+![pic](./wireframes/scr4.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
