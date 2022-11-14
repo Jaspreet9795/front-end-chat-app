@@ -8,7 +8,6 @@ functions & features -
 2. Users will be able to  create their own chat groups with teachers / students 
 3. Users will be able to scroll through the existing chat rooms list 
 4. users will be able to delete the chat rooms if no longer required 
-5. This app will use web socket for rela time 
 
 
 
