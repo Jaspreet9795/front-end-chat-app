@@ -1,15 +1,20 @@
 
 Project-3 : 
 
-Title : Chat- App for  teachers and students. 
+Title : Chat- App for teachers and students. 
 
 functions & features - 
-1. New User will be able to register & existing users can login 
+1. New User will be able to register & existing users can login. 
 2. Users will be able to  create their own chat groups with teachers / students 
-3. Users will be able to scroll through the existing chat rooms list 
-4. users will be able to delete the chat rooms if no longer required 
+3. Users will be able to send messages to each other in the chat rooms. 
+4. users will be able to do real time conversation.  
+5. Users will be able to scroll through the existing chat rooms list 
+6. users will be able to delete the chat rooms if no longer required 
 
-
+Technologies -
+1. React
+2. Ruby
+3. Web socket 
 
 Below is the basic outline of our project, 
 ![pic](./wireframes/scr1.png)
