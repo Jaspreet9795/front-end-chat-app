@@ -1,7 +1,7 @@
 import {React, useState} from "react";
 import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react";
 
-g
+
 const Login =()=>{
     
         const[email, setEmail]=useState()
