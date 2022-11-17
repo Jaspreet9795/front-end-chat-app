@@ -4,7 +4,7 @@ import { Container, Box, Text , Tab, Tabs,TabList, TabPanels, TabPanel  } from "
 import Login from "./Authentication/Login";
 import SignUp from "./Authentication/SignUp";
 
-const HomePage= ()=> {
+const HomePage= ({addUser})=> {
     return <Container maxW= "xl" centerContent >
         <Box 
           d="flex"
@@ -31,7 +31,7 @@ const HomePage= ()=> {
              <Login />
            </TabPanel>
            <TabPanel>
-            <SignUp />
+            <SignUp addUser={addUser} />
            </TabPanel>
          </TabPanels>
         </Tabs>

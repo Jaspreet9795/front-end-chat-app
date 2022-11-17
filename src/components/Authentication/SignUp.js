@@ -1,18 +1,43 @@
 import React, { useState } from "react";
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react";
+import { Button,Select, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react";
 
 
-const SignUp =()=>{
+
+const SignUp =({addUser})=>{
     const[firstName, setFirstName]=useState()
     const[lastName, setLastName]=useState()
     const[email, setEmail]=useState()
     const [password, setPassword]=useState()
     const [pic, setPic]=useState()
+    const [selection, setSelection] =useState()
     const [show, setShow] =useState(false)
   
 
     const handleClick=()=> setShow(!show)
-    const handleSubmit=()=>{}
+   
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+
+        const newUser ={
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            password: password ,
+            user_role: selection,
+            profile_pic: pic
+        }
+
+        fetch("http://localhost:9292/users",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"   
+            }, 
+            body : JSON.stringify(newUser)
+        })
+        .then (r=>r.json())
+        .then (user=> addUser(user))
+
+    }
     return (
         <VStack spacing={'5px'}> 
            <FormControl id="first-name" isRequired>
@@ -25,6 +50,14 @@ const SignUp =()=>{
             <FormLabel>Last Name</FormLabel>
             <Input h="30px" placeholder="Enter your last name " 
             onChange={e=>setLastName(e.target.value)}></Input>
+           </FormControl>
+
+           <FormControl id="selection" >
+           <FormLabel>Select Role</FormLabel>
+           <Select value={selection}  onChange= {e=>setSelection(e.target.value)} placeholder='Select role'>
+          <option value='student'>Student</option>
+          <option value='teacher'>Teacher</option>
+           </Select>
            </FormControl>
 
            <FormControl id="email" isRequired>

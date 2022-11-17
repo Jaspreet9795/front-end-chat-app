@@ -4,13 +4,17 @@ import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, V
 
 const Login =()=>{
     
-        const[email, setEmail]=useState()
-        const [password, setPassword]=useState()
+        const[email, setEmail]=useState('')
+        const [password, setPassword]=useState('')
         const [show, setShow] =useState(false)
       
     
         const handleClick=()=> setShow(!show)
-        const handleSubmit=()=>{}
+        // const handleSubmit=()=>{
+        //     setEmail
+
+
+        // }
         return (
             <VStack spacing={'5px'}> 
                
