@@ -1,17 +1,19 @@
-import { Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/layout";
 import React from "react";
 import ChatBox from "./ChatBox";
 import Header from "./Header";
+import SideMenu from "./SideMenu"
 
-
-const ChatPage= ()=>{
+const ChatPage= ({currentUser, onAddMessage})=>{
 
 
  return (
-   
-    // <Header ></Header>
-    <ChatBox></ChatBox>
-   
+    <>
+
+     <Header ></Header>
+     <SideMenu></SideMenu>
+     <ChatBox currentUser= {currentUser} onAddMessage={onAddMessage} ></ChatBox>
+    </>
  )
 }
 

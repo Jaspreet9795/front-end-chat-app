@@ -1,20 +1,40 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/layout";
+import { Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import InputText from "./InputText";
 
 
-const ChatBox=()=>{
+const ChatBox=({currentUser, onAddMessage})=>{
+    
     return (
-    <Box
+    
+        <Box
+        // d={{ base: selectedChat ? "flex" : "none", md: "flex" }}
         display="flex"
-        flexDirection={"column"}
+        position={"absolute"}
         alignItems="center"
-        p="3"
-        bg= "white"
-        w= {{base:"100%", md:"31%"}}
-        // m= '0 1px 800px 0px '
-        borderRadius='5px'
-        borderWidth= "5px"></Box>
-    )
-}
+        flexDir="column"
+        // float={'center'}
+        p={1}
+        bg="white"
+        margin={'100px 50px 0 500px '}
+        h= {650}
+        w={{ base: "50%", md: "65%" }}
+        borderRadius="lg"
+        borderWidth="1px"
+      >
+        <Box 
+        display="flex"
+        margin="550px">
+         <InputText currentUser= {currentUser} onAddMessage={onAddMessage}> </InputText>
+        </Box>
+        {/* <SingleChat fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} /> */}
+      </Box>
+     
+    )  
+       }
+    
+
 
 export default ChatBox; 

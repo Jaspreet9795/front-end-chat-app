@@ -4,20 +4,19 @@ import { Button,Select, FormControl, FormLabel, Input, InputGroup, InputRightEle
 
 
 const SignUp =({addUser})=>{
-    const[firstName, setFirstName]=useState()
-    const[lastName, setLastName]=useState()
-    const[email, setEmail]=useState()
-    const [password, setPassword]=useState()
+    const[firstName, setFirstName]=useState("")
+    const[lastName, setLastName]=useState("")
+    const[email, setEmail]=useState("")
+    const [password, setPassword]=useState("")
     const [pic, setPic]=useState()
-    const [selection, setSelection] =useState()
+    const [selection, setSelection] =useState("")
     const [show, setShow] =useState(false)
   
 
     const handleClick=()=> setShow(!show)
    
     const handleSubmit=(e)=>{
-        e.preventDefault()
-
+        e.preventDefault();
         const newUser ={
             first_name: firstName,
             last_name: lastName,
@@ -26,7 +25,6 @@ const SignUp =({addUser})=>{
             user_role: selection,
             profile_pic: pic
         }
-
         fetch("http://localhost:9292/users",{
             method: "POST",
             headers: {
@@ -35,7 +33,14 @@ const SignUp =({addUser})=>{
             body : JSON.stringify(newUser)
         })
         .then (r=>r.json())
-        .then (user=> addUser(user))
+        .then (user=> {
+            addUser(user);
+            setFirstName("");
+            setLastName("");
+            setPassword("");
+            setPic();
+            setEmail("");
+        })
 
     }
     return (

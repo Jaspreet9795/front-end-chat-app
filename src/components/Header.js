@@ -13,13 +13,12 @@ const Header =() => {
     justifyContent='space-between'
     p={"5px 10px 5px 10px"}
     bg= "white"
- 
     w="100%"
-    m= '0 1px 800px 0px '
+    m= '10px 35px 1000px 45px '
     borderRadius='10px'
     borderWidth= "5px">
       
-  <Text  fontSize={"3xl"} fontFamily="Work sans">Search</Text>
+  <Text  fontSize={"3xl"} fontFamily="Work sans">Welcome!</Text>
 
   <Text textColor={"GrayText"} fontSize={"3xl"} fontFamily="Work sans"><b>Chatter-Box </b></Text>
   <div >
