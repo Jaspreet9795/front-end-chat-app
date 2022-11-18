@@ -22,7 +22,7 @@ function InputText({currentUser, onAddMessage}) {
       .then((r) => r.json())
       .then((newMessage) => {
         onAddMessage(newMessage);
-        setContent("");
+        setContent('');
       });
   }
 

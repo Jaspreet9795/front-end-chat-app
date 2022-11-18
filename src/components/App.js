@@ -31,6 +31,7 @@ function App() {
 
 function addUser(user){
   setUsers([...users, user])
+  
 }
 // for User login
 // function checkUser(user){
@@ -38,9 +39,9 @@ function addUser(user){
 // }
 
 
-const findStudents = users.filter((user)=> {
+// const findStudents = users.filter((user)=> {
   
-})
+// })
 
 function handleAddMessage(newMessage) {
   setMessages([...messages, newMessage]);

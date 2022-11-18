@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/layout";
 import React from "react";
 import ChatBox from "./ChatBox";
 import Header from "./Header";
-import SideMenu from "./SideMenu"
+import CreateRoom from "./CreateRoom"
 
 const ChatPage= ({currentUser, onAddMessage})=>{
 
@@ -12,7 +12,7 @@ const ChatPage= ({currentUser, onAddMessage})=>{
     <>
 
      <Header ></Header>
-     <SideMenu></SideMenu>
+     <CreateRoom></CreateRoom>
      <ChatBox currentUser= {currentUser} onAddMessage={onAddMessage} ></ChatBox>
     </>
  )

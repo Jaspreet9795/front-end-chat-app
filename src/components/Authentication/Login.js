@@ -47,7 +47,7 @@ const Login =({ status, setStatus} )=>{
                
                <FormControl id="email" isRequired>
                 <FormLabel>Email</FormLabel>
-                {status === 404 ? <Redirect to= '/Chats' /> : <Redirect to= '/' />}
+                {status === 200 ? <Redirect to= '/Chats' /> : <Redirect to= '/' />}
                 <Input h="30px" placeholder="Enter your email-id " 
                 onChange={e=>setEmail(e.target.value)}></Input>
                </FormControl>
