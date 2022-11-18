@@ -13,7 +13,7 @@ const HomePage= ({addUser, checkUser})=> {
           textAlign='center'
           p={3}
           bg= "white"
-          w='100%'////
+          w='100%'
           m= '40px 0 15px 0'
           borderRadius='20px'
           borderWidth= "5px"

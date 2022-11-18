@@ -20,7 +20,7 @@ const Header =() => {
       
   <Text  fontSize={"3xl"} fontFamily="Work sans">Welcome!</Text>
 
-  <Text textColor={"GrayText"} fontSize={"3xl"} fontFamily="Work sans"><b>Chatter-Box </b></Text>
+  <Text textColor={"GrayText"} fontSize={"3xl"} fontFamily="Work sans"><b>Ask your doubts! </b></Text>
   <div >
   <Menu >
     <MenuButton p={1} >
