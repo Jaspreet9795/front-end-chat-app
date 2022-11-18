@@ -1,6 +1,9 @@
 import React from "react";
+// eslint-disable-next-line
 import { Box, Container } from "@chakra-ui/layout";
+// eslint-disable-next-line
 import { Text } from "@chakra-ui/react";
+// eslint-disable-next-line
 import { Flex } from "@chakra-ui/react";
 import InputText from "./InputText";
 

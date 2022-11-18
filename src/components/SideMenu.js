@@ -4,6 +4,7 @@ import { Box, FormControl, Input, FormLabel , Button} from "@chakra-ui/react";
 
 
 const SideMenu=()=>{
+  // eslint-disable-next-line
     const [groupChatName, setGroupChatName] = useState();
 
 

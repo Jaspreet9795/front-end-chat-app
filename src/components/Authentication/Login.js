@@ -1,15 +1,17 @@
 import {React, useState} from "react";
 import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react";
+// eslint-disable-next-line
 import { Redirect, useHistory,Link } from "react-router-dom";
+// eslint-disable-next-line
 import ChatPage from "../ChatPage";
 
 
-const Login =()=>{
+const Login =({ status, setStatus} )=>{
     
         const[email, setEmail]=useState('')
         const [password, setPassword]=useState('')
         const [show, setShow] =useState(false)
-        
+        // eslint-disable-next-line
         let history = useHistory()
     
         const handleClick=()=> setShow(!show)
@@ -28,7 +30,8 @@ const Login =()=>{
             }, 
             body : JSON.stringify(currentUser)
         })
-        .then(r => (r.json().status === 200) ? <Redirect to= '/Chats' /> : <Redirect to= '/' />)
+        .then(r => setStatus(r.status))
+        // .then(r => (r.json().status === 404) ? <Redirect to= '/Chats' /> : <Redirect to= '/' />)
         .then(r=>console.log(r))
             //  return history.push("/chats");
             // // return <Redirect to='/chats' />
@@ -44,11 +47,12 @@ const Login =()=>{
                
                <FormControl id="email" isRequired>
                 <FormLabel>Email</FormLabel>
+                {status === 404 ? <Redirect to= '/Chats' /> : <Redirect to= '/' />}
                 <Input h="30px" placeholder="Enter your email-id " 
                 onChange={e=>setEmail(e.target.value)}></Input>
                </FormControl>
                
-    
+                
                <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
@@ -67,8 +71,9 @@ const Login =()=>{
                onClick={handleSubmit}>
                 Login
                </Button>
-             
+               
             </VStack>
+           
     )
 }
 

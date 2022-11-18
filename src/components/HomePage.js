@@ -1,10 +1,11 @@
 import React from "react"; 
-
+import { useState } from "react";
 import { Container, Box, Text , Tab, Tabs,TabList, TabPanels, TabPanel  } from "@chakra-ui/react";
 import Login from "./Authentication/Login";
 import SignUp from "./Authentication/SignUp";
 
 const HomePage= ({addUser, checkUser})=> {
+  const [status, setStatus] = useState('');
     return <Container maxW= "xl" centerContent >
         <Box 
           d="flex"
@@ -12,7 +13,7 @@ const HomePage= ({addUser, checkUser})=> {
           textAlign='center'
           p={3}
           bg= "white"
-          w='100%'
+          w='100%'////
           m= '40px 0 15px 0'
           borderRadius='20px'
           borderWidth= "5px"
@@ -28,7 +29,7 @@ const HomePage= ({addUser, checkUser})=> {
          </TabList>
          <TabPanels>
            <TabPanel>
-             <Login />
+             <Login status={status} setStatus={setStatus}/>
            </TabPanel>
            <TabPanel>
             <SignUp addUser={addUser}  />

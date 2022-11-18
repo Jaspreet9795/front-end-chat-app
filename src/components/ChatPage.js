@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { Box } from "@chakra-ui/layout";
 import React from "react";
 import ChatBox from "./ChatBox";

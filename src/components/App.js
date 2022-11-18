@@ -5,6 +5,7 @@ import React  from "react";
 import HomePage from './HomePage';
 import ChatPage from './ChatPage';
 import { useEffect, useState } from 'react';
+// eslint-disable-next-line
 import InputText from './InputText';
 
 const testUser = { username: "Duane" };
@@ -18,13 +19,13 @@ function App() {
     fetch("http://localhost:9292/users")
     .then (r=>r.json())
     .then (users=> setUsers(users))
-  })
+  }, [])
 
   useEffect(()=>{
     fetch("http://localhost:9292/messages")
     .then((r=>r.json()))
     .then (messages=> setMessages(messages))
-  })
+  }, [])
 
 // for User Sign-up form 
 
