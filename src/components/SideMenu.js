@@ -1,12 +1,41 @@
 
-import React ,{useState} from "react";
+import React ,{useState, useEffect,} from "react";
+import { useParams } from "react-router-dom";
 import { Box, FormControl, Input, FormLabel , Button} from "@chakra-ui/react";
 
 
 const SideMenu=()=>{
-  // eslint-disable-next-line
+    const [isLoaded, setIsLoaded]=useState (false)
     const [groupChatName, setGroupChatName] = useState();
+    const [user, setUser] = useState(null)
 
+    const [selectedTeacher, setSelectedTeacher]= useState([])
+    const [selectedStudent, setSelectedStudent]= useState([])
+
+    const [searchTeacher, setSearchTeacher]=useState('')
+    const [searchStudent, setSearchStudent]=useState('')
+
+    const[searchResultTeacher, setSearchResultTeacher] =useState([])
+    const[searchResultStudent, setSearchResultStudent] =useState([])
+    
+    const {id}=useParams();
+
+    useEffect(()=>{
+        fetch(`http://localhost:9292/users/${id}`)
+        .then (r=>r.json())
+        .then (user=> { setUser(user)
+                     setIsLoaded(true)
+        })
+      },[id])
+
+      useEffect(()=>{
+        fetch("http://localhost:9292/students")
+        .then (r=>r.json())
+        .then (users=> setUsers(users))
+      })
+    
+    
+    if(!isLoaded) return <h2>Loading...</h2>
 
     const handleSearch=()=>{
 

@@ -38,9 +38,15 @@ function addUser(user){
 // }
 
 
+const findStudents = users.filter((user)=> {
+  
+})
+
 function handleAddMessage(newMessage) {
   setMessages([...messages, newMessage]);
 }
+
+
 
 // const displayedMessages = messages.filter((message) =>
 // message.body.toLowerCase().includes(search.toLowerCase())
